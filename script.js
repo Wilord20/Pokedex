@@ -1,4 +1,4 @@
-const mainScreen = document.querySelector('.main-screen');
+const mainScreen = document.querySelector(".main-screen");
 const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-button");
 const pokeId = document.getElementById("pokemon-id");
@@ -15,8 +15,8 @@ const spriteFront = document.getElementById("sprite");
 const spriteBack = document.getElementById("poke-back-image");
 const types = document.getElementById("types");
 
-const isValid = async pokemon => {
-  const url = "https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/" + pokemon
+const isValid = async (pokemon) => {
+  const url = "https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/" + pokemon;
 
   if (pokemon.length === 0) {
     alert("Pokémon not found");
@@ -34,8 +34,8 @@ const isValid = async pokemon => {
   }
 };
 
-const getData = data => {
-  mainScreen.classList.remove('hide');
+const getData = (data) => {
+  mainScreen.classList.remove("hide");
 
   pokeId.textContent = "#" + data.id;
   pokeName.textContent = data.name.toUpperCase();
@@ -52,8 +52,7 @@ const getData = data => {
 
   const dataTypes = data.types;
   const dataFirstType = dataTypes[0];
-    types.innerHTML = ""
-
+  types.innerHTML = "";
 
   if (dataTypes[1]) {
     var span1 = document.createElement("span");
@@ -62,19 +61,17 @@ const getData = data => {
     types.appendChild(span1);
     span2.innerHTML = `<span class="poke-type-one">${data.types[0].type.name.toUpperCase()}</span>`;
     types.appendChild(span2);
-    mainScreen.classList.add(dataFirstType.type.name)
-  }
-  else {
+    mainScreen.classList.add(dataFirstType.type.name);
+  } else {
     var span1 = document.createElement("span");
     span1.innerHTML = `<span class="poke-type-one">${data.types[0].type.name.toUpperCase()}</span>`;
     types.appendChild(span1);
-    mainScreen.classList.add(dataFirstType.type.name)
+    mainScreen.classList.add(dataFirstType.type.name);
   }
 
-  mainScreen.classList.add(dataFirstType.type.name);
+  mainScreen.classList = `main-screen ${dataFirstType.type.name}`;
+};
 
-}
-
-searchBtn.addEventListener('click', () => {
+searchBtn.addEventListener("click", () => {
   isValid(searchInput.value.toLowerCase().replace(" ", "-"));
-})
+});
