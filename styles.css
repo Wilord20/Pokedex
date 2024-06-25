@@ -331,12 +331,12 @@
   .right-container__buttons {
     display: flex;
     justify-content: space-around;
-    margin-top: 25px;
+    margin-top: 15%;
   }
   
   .left-button{
     text-align: center; 
-    background: #DEDEDE;
+    background: #c5c1c1;
     border-radius: 3px;
     border: 2px solid black;
     box-shadow: 0 0 2px 2px rgba(0,0,0,.3);
