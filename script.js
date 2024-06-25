@@ -61,12 +61,10 @@ const getData = (data) => {
     types.appendChild(span1);
     span2.innerHTML = `<span class="poke-type-one">${data.types[0].type.name.toUpperCase()}</span>`;
     types.appendChild(span2);
-    mainScreen.classList.add(dataFirstType.type.name);
   } else {
     var span1 = document.createElement("span");
     span1.innerHTML = `<span class="poke-type-one">${data.types[0].type.name.toUpperCase()}</span>`;
     types.appendChild(span1);
-    mainScreen.classList.add(dataFirstType.type.name);
   }
 
   mainScreen.classList = `main-screen ${dataFirstType.type.name}`;
